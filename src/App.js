@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import './App.css';
-// import About from './components/About';
+import About from './components/About';
 import Navbar from './components/Navbar';
 import Textform from './components/Textform';
 import Alert from './components/Alert';
@@ -50,20 +50,19 @@ function App() {
   return (
     <>   
     {/* <Navbar title='Blog' aboutText='About us'/> */}
-    {/* <Router> */}
+    <Router>
     
     <Navbar aboutText='About us' mode={mode} toggleMode={toggleMode} />
     <Alert alert={alert}/>
-    {/* <Routes> */}
-    <div className="container my-3">
-    <Textform showAlert={showAlert} heading='Enter the text to analyze below' mode={mode}/>
+    <Routes>
+    {/* <div className="container my-3"> */}
   
-          {/* <Route exact path="/about" element={<About />} /> */}
-          {/* <Route exact path="/" element={<Textform showAlert={showAlert} heading='Enter the text to analyze below' mode={mode}/>}/> */}
+          <Route exact path="/about" element={<About mode={mode} />} />
+          <Route exact path="/" element={<Textform showAlert={showAlert} heading='TextUtils - Word Counter, Character Counter, Remove extra spaces' mode={mode}/>}/>
          
-    </div>
-    {/* </Routes> */}
-    {/* </Router> */}
+    {/* </div> */}
+    </Routes>
+    </Router>
     </>
   );
 }
